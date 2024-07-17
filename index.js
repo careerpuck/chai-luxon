@@ -39,8 +39,8 @@ function _chaiLuxon(chai, utils) {
     const expectedDateTime = L(expected);
 
     const granularityMessage = granularity ? ` (granularity: ${granularity})` : '';
-    const expectedPassMessage = `expected ${objDateTime.toLocaleString()} to be the same as ${expectedDateTime.toLocaleString()}${granularityMessage}`;
-    const expectedFailMessage = `expected ${objDateTime.toLocaleString()} not to be the same as ${expectedDateTime.toLocaleString()}${granularityMessage}`;
+    const expectedPassMessage = `expected ${objDateTime.toISO()} to be the same as ${expectedDateTime.toISO()}${granularityMessage}`;
+    const expectedFailMessage = `expected ${objDateTime.toISO()} not to be the same as ${expectedDateTime.toISO()}${granularityMessage}`;
 
     this.assert(
       granularity ? objDateTime.hasSame(expectedDateTime, granularity) : objDateTime.equals(expectedDateTime),
@@ -58,8 +58,8 @@ function _chaiLuxon(chai, utils) {
     const expectedDateTime = L(expected);
 
     const granularityMessage = granularity ? ` (granularity: ${granularity})` : '';
-    const expectedPassMessage = `expected ${objDateTime.toLocaleString()} to be before ${expectedDateTime.toLocaleString()}${granularityMessage}`;
-    const expectedFailMessage = `expected ${objDateTime.toLocaleString()} not to be before ${expectedDateTime.toLocaleString()}${granularityMessage}`;
+    const expectedPassMessage = `expected ${objDateTime.toISO()} to be before ${expectedDateTime.toISO()}${granularityMessage}`;
+    const expectedFailMessage = `expected ${objDateTime.toISO()} not to be before ${expectedDateTime.toISO()}${granularityMessage}`;
 
     this.assert(
       granularity ? objDateTime.startOf(granularity) < expectedDateTime.startOf(granularity) : objDateTime < expectedDateTime,
@@ -95,8 +95,8 @@ function _chaiLuxon(chai, utils) {
     const expectedDateTime = L(expected);
 
     const granularityMessage = granularity ? ` (granularity: ${granularity})` : '';
-    const expectedPassMessage = `expected ${objDateTime.toLocaleString()} to be after ${expectedDateTime.toLocaleString()}${granularityMessage}`;
-    const expectedFailMessage = `expected ${objDateTime.toLocaleString()} not to be after ${expectedDateTime.toLocaleString()}${granularityMessage}`;
+    const expectedPassMessage = `expected ${objDateTime.toISO()} to be after ${expectedDateTime.toISO()}${granularityMessage}`;
+    const expectedFailMessage = `expected ${objDateTime.toISO()} not to be after ${expectedDateTime.toISO()}${granularityMessage}`;
 
     this.assert(
       granularity ? objDateTime.startOf(granularity) > expectedDateTime.startOf(granularity) : objDateTime > expectedDateTime,
